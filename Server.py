@@ -3,7 +3,7 @@ import select
 
 # Sockets are endpoints that receive data, they sit at an IP and a PORT
 IP = "127.0.0.1"  # localhost
-PORT = 1234  # port to listen on
+PORT = 1234  # Port to listen on
 HEADER_LENGTH = 10
 
 server_socket = s.socket(s.AF_INET, s.SOCK_STREAM)  # Creating the socket object, AF_NET is IPV4, SOCK_STREAM is TCP
@@ -69,7 +69,7 @@ while True:
             for client in clients:  # Shares the message to everyone
                 if client != notified_socket:
                     client.send(user['header'] + user['data'] + message['header'] + message['data'])
-                    '''Sends username data and the message itself'''
+                    # Sends username data and the message itself
 
     for notified_socket in exception_sockets:
         sockets_list.remove(notified_socket)
